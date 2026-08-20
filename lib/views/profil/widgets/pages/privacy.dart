@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+class PrivacyPage extends StatefulWidget {
+  const PrivacyPage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<PrivacyPage> createState() => _PrivacyPageState();
+}
+
+class _PrivacyPageState extends State<PrivacyPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: Text(
+          "Privacy Page",
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}

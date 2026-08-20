@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movieflex/datas/dummy.dart';
 import 'package:movieflex/datas/video.dart';
 import 'package:movieflex/details/screens/video_player_screen.dart';
+import 'package:movieflex/models/movie.model.dart';
 import 'package:video_player/video_player.dart';
 
 class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
@@ -43,7 +44,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
   }
 }
 
-// Widget interne qui conserve TOUT ton design + la gestion vidéo/boutons
+// Widget interne qui conserve TOUT les  design + la gestion vidéo/boutons
 class _DetailSliverContent extends StatefulWidget {
   final Movie movie;
   final double expandedHeight;
@@ -69,7 +70,7 @@ class _DetailSliverContentState extends State<_DetailSliverContent> {
   @override
   void initState() {
     super.initState();
-    // Charge la vidéo depuis ton fichier video.dart
+    // Charge la vidéo depuis le fichier video.dart
     _controller =
         VideoPlayerController.networkUrl(Uri.parse(VideoData.defaultVideoUrl))
           ..initialize().then((_) {
